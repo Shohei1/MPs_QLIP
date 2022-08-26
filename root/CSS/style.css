@@ -1,0 +1,854 @@
+@charset "utf-8";
+
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    /*バックグラウンド２カラー*/
+    background-color: rgb(0, 0, 0);
+    margin-top: 250px;
+    background: linear-gradient(180deg, #000000 0%, #000000 25%, #ffffff 25%, #ffffff 100%);
+    width: 100%;
+
+}
+
+main {
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*「開始」ヘッダーのCSS*/
+
+/*「開始」ヘッダーのjavaScriptで変えるやつ*/
+
+
+
+
+header {
+    /* headerを画面上部に固定する */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background: black;
+    transition: 0.5s;
+}
+
+header.scroll-nav {
+    background: white;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+header.scroll-nav .leftMenuHostText,
+header.scroll-nav .mainMenu,
+header.scroll-nav .leftMainMenuButton {
+    color: black;
+}
+
+header.scroll-nav .logo {
+    color: red;
+}
+
+header.scroll-nav .nav {
+    margin-top: -70px;
+}
+
+/* header.scroll-nav .nav2 {
+    font-size: 5px;
+} */
+
+header.scroll-nav .bigSearchPrimary {
+    min-width: 300px;
+    border: 1px solid lightgray;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+}
+
+/* header.scroll-nav .logo,
+header.scroll-nav .leftMenu {
+    align-self: center;
+} */
+
+/*「終了」ヘッダーのjavaScriptで変えるやつ*/
+
+.menuAround {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+
+    max-width: 1606px;
+    position: relative;
+}
+
+.logo,
+.leftMenu {
+
+    align-self: flex-start;
+    transition: 0.8s;
+}
+
+.logo {
+    color: white;
+    margin-top: 10px;
+    position: absolute;
+    top: 10px;
+    left: 30px;
+}
+
+.leftMenu {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    z-index: -1;
+}
+
+/*「開始」ヘッダーの真ん中*/
+.navA,
+.nav2 {
+    display: flex;
+}
+
+.navA {
+    justify-content: center;
+}
+
+.nav {
+    padding: 0 24px;
+    transition: 0.5s;
+}
+
+/* .nav2,
+.nav3 {
+    width: 144px;
+    height: 40px;
+} */
+
+.menuButton {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+}
+
+.menuButton:hover {
+    opacity: 0.5;
+}
+
+
+/* .menubutton1 {
+    width: 80px;
+    height: 40px;
+}
+
+.menubutton2 {
+    width: 64px;
+    height: 40px;
+}
+
+.menubutton3 {
+    width: 144px;
+    height: 40px;
+} */
+
+.menuButton {
+    padding: 10px 16px;
+    /* font-size: 16px; */
+}
+
+.menuButtonText {
+    font-family: 'Roboto', 'arial', sans-serif;
+    /* font-weight: lighter; */
+}
+
+.mainMenu {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+
+}
+
+/*「開始」ヘッダーの下の検索*/
+.bigSearchPrimary {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* .button01 {
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 50px;
+    text-align: center;
+    min-width: 848px;
+    border: none;
+    transition: 0.3s;
+} もう使わない場合は消す*/
+
+.bigSearhSecondary {
+    display: flex;
+
+    justify-content: space-around;
+    ;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 50px;
+    border: none;
+    transition: 0.3s;
+}
+
+
+.bigSearchMiddle {
+    display: flex;
+    padding: 14px 32px;
+    gap: 10px;
+}
+
+.bigSearchText {
+    font-size: 12px;
+    padding: 0 0 2px;
+}
+
+.bigSearchLeft {
+    padding: 14px 32px;
+}
+
+.bigSearchInput {
+    display: block;
+    border: 0 !important;
+    margin: 0;
+    padding: 0 !important;
+    width: 100% !important;
+    background: none !important;
+    font-size: 12px;
+
+    text-overflow: ellipsis !important;
+
+}
+
+.bigSearchLine {
+    align-self: center;
+    border-right: 1px solid;
+    -webkit-flex: 0 0 0;
+    -ms-flex: 0 0 0;
+    flex: 0 0 0;
+    height: 32px;
+}
+
+/* .mushimegane::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../imageForCode/mushimegane.png);
+    background-size: contain;
+    vertical-align: middle;
+} */
+
+/*「終了」ヘッダーの下の検索*/
+
+/*「終了」ヘッダーの真ん中*/
+
+/*「開始」ヘッダーの左*/
+
+.leftMenuHost {
+    display: flex;
+    margin-top: 10px;
+}
+
+
+.leftMenuNav {
+    display: flex;
+    align-items: center;
+}
+
+.mainMenu {
+    border-radius: 22px;
+}
+
+.menuHostLink {
+    text-decoration: none;
+    color: #fff;
+    border-radius: 32px;
+}
+
+.mainMenu:hover,
+.menuHostLink:hover {
+    background: #1d1d1d;
+}
+
+.mainMenu,
+.leftMenuHostText {
+    padding: 12px;
+    background-color: transparent;
+    transition: 0.5s;
+
+}
+
+.leftMenuHostText {
+    display: flex;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.leftMainMenuButton {
+    display: flex;
+    padding: 5px 5px 5px 12px;
+    border-radius: 32px;
+    border: none;
+    align-items: center;
+}
+
+.leftMainMenuButtonBelow2 {
+    margin-left: 12px;
+    color: #808080;
+}
+
+
+/*「終了」ヘッダーの左*/
+
+/*「終了」ヘッダーのCSS*/
+
+/*「開始」bodyのCSS*/
+/*「開始」ウクライナ難民のCSS*/
+
+.uklaineSuper {
+    display: flex;
+    justify-content: space-around;
+    margin: 80px 50px 0px;
+}
+
+.uklaine {
+    max-width: 1280px;
+    height: auto;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 300%;
+    background: rgb(255, 56, 92);
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.ukalineSentence {
+    font-weight: bold;
+    color: white;
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 54px;
+    padding-bottom: 20px;
+}
+
+/* .uklaineNumber {
+    font-size: 0.8em;
+    letter-spacing: -1px;
+} */
+
+.buttonFlex {
+    display: flex;
+    justify-content: center;
+}
+
+.uklaineButton {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #FF385C;
+    color: #fff;
+    border: 1px solid #fff;
+    font-weight: 600;
+}
+
+.uklaineButton:hover {
+    cursor: pointer;
+}
+
+/*「終了」ウクライナ難民のCSS*/
+
+/*「開始」柔軟な検索のCSS*/
+.flexibleSearch {
+    text-align: center;
+    margin: 80px 50px 0px;
+}
+
+.photoEdit {
+    max-width: 1280px;
+    height: auto;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+
+}
+
+.photoEdit img {
+    border-radius: 20px;
+    /* width: 100%; */
+
+}
+
+.flexibleSearchContent {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 40px 80px;
+
+}
+
+.flexibleSearchSentence {
+    font-weight: bold;
+    color: white;
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 54px;
+}
+
+.flexibleSearchButton {
+    padding: 20px 30px;
+    margin-top: 30px;
+    border-radius: 50px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.flexibleSearchButton:hover {
+    opacity: 0.96;
+    cursor: pointer;
+}
+
+.flexibleSearchButtonSentence {
+    background: linear-gradient(90deg, #6F019C 0%, #C6017E 135.12%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/*「終了」柔軟な検索のCSS*/
+
+/*「開始」次の行く旅のアイディアを見つけよう*/
+.ideaForNext {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 80px;
+}
+
+.ideaForNext2 {
+    max-width: 1280px;
+    height: auto;
+    margin: 0 auto;
+    flex-wrap: nowrap;
+
+}
+
+.ideaForNextSentence {
+    color: #000;
+    margin: 40px 0;
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 47px;
+
+}
+
+.ideaForNextContents {
+    display: flex;
+    justify-content: space-between;
+    height: 400px;
+    gap: 20px;
+}
+
+.ideaForNextEach1 {
+    background: rgb(188, 26, 110);
+    height: 400px;
+    border-radius: 20px;
+
+}
+
+.ideaForNextEach2 {
+    background: #DE3151;
+    height: 400px;
+    border-radius: 20px;
+
+}
+
+.ideaForNextEach3 {
+    background: #D93B30;
+    height: 400px;
+    border-radius: 20px;
+
+}
+
+.ideaForNextEach4 {
+    background: #CC2D4A;
+    height: 400px;
+    border-radius: 20px;
+
+}
+
+.NextEachPhoto1 img {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.NextEachDestination1 {
+    padding: 24px 16px 6px;
+
+}
+
+.NextEachDestination1 .destination {
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.NextEachDestination1 .destinationDistance {
+    color: #fff;
+    font-size: 20px;
+}
+
+/*「終了」次の行く旅のアイディアを見つけよう*/
+
+/*「開始」Airbnb体験を検索しよう*/
+
+.exploreExperiences {
+    width: 100%;
+    height: auto;
+    margin-top: 80px;
+}
+
+.exploreExperiencesUnder {
+    max-width: 1280px;
+    height: auto;
+    margin: 0 auto;
+    flex-wrap: nowrap;
+}
+
+.exploreExperiencesSentence {
+    padding: 40px 0;
+    max-width: 1280px;
+    color: #222222;
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 47px;
+}
+
+.twoTypesOfExperiences {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px
+}
+
+.experiencePhoto {
+    width: 600px;
+    height: 720px;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+}
+
+.experiencePhoto img {
+    border-radius: 20px;
+    width: 100%;
+}
+
+.experienceContent {
+    position: absolute;
+    /*なんで１８％？*/
+    left: 80px;
+    top: 80px;
+}
+
+.experienceSentence {
+    font-weight: bold;
+    color: white;
+    font-size: 53px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 54px;
+}
+
+.experienceButton {
+    padding: 14px 24px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    border: none;
+    color: #222222;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.experienceButton:hover {
+    opacity: 0.95;
+    cursor: pointer;
+}
+
+/*「終了」Airbnb体験を検索しよう*/
+
+/*「開始」ホスティングについて知りたいことはありますか？*/
+.hosting {
+    width: 100%;
+    margin-top: 80px;
+    margin-bottom: 48px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.hostingPhoto {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+}
+
+.hostingPhoto img {
+    max-width: 1280px;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.hostingContent {
+
+    position: absolute;
+    left: 80px;
+    top: 80px;
+
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.hostingSentence {
+    color: #FFFFFF;
+    font-size: 95px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 105px;
+}
+
+.hostingButton {
+    padding: 14px 24px;
+    margin-top: 100px;
+    border-radius: 10px;
+    background-color: #fff;
+    border: none;
+    color: #222222;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    width: 260px;
+}
+
+.flexibleSearchButton:hover {
+    opacity: 0.95;
+    cursor: pointer;
+}
+
+/*「終了」ホスティングについて知りたいことはありますか？*/
+/*「終了」bodyのCSS*/
+
+/*「開始」フッターのCSS*/
+
+.footerTop {
+    /* min-width: 1280px; */
+
+    box-sizing: border-box;
+    background-color: #F7F7F7;
+    text-align: center;
+}
+
+.footer2 {
+    max-width: 1280px;
+    box-sizing: border-box;
+    background-color: #F7F7F7;
+    display: inline-block;
+}
+
+.footer3 {
+    box-sizing: border-box;
+    /*レスポンシブで右側にできた謎の余白の原因はこいつ。。。*/
+    /* width: 1280px; */
+}
+
+.footerContents {
+    box-sizing: border-box;
+}
+
+.footer4 {
+    box-sizing: border-box;
+}
+
+.footer5Flex {
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    gap: 30px;
+
+}
+
+.support {
+    box-sizing: border-box;
+    text-align: left;
+    padding: 0px 12px;
+
+}
+
+.footerUpTitle {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 800px;
+}
+
+.sectionList {
+    margin-top: 16px
+}
+
+.sectionUnorganizedList {
+    padding-left: 0;
+    display: block;
+    list-style: none;
+}
+
+
+.footerBottom {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgb(221, 221, 221);
+    text-align: left;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    line-height: 18px;
+}
+
+.listText,
+.footerBottomLink,
+.FooterBottom2 a {
+    text-decoration: none;
+    color: rgb(94, 94, 94);
+    font-size: 14px;
+}
+
+.FooterBottom2Sen {
+    font-size: 14px;
+    color: rgb(94, 94, 94);
+}
+
+.sectionList a:hover,
+.footerBottomLink :hover,
+.footerBottom2Sentence:hover {
+    text-decoration: underline;
+}
+
+.footerBottom3Botton1,
+.footerBottom3,
+.footerBottom3Flex1 {
+    display: flex;
+}
+
+.footerBottom3Botton1 {
+    border: none;
+    background-color: #F7F7F7;
+}
+
+.footerBottom3Span {
+    margin: 0px 24px 0px 0px;
+}
+
+.footerBottom3Botton2 {
+    border: none;
+    background-color: #F7F7F7;
+}
+
+.marks {
+    margin-right: 8px;
+    text-decoration: none;
+}
+
+.marks2 {
+    text-decoration: underline;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
+
+.sns {
+    margin-left: 32px;
+}
+
+.snsFlex {
+    display: flex;
+}
+
+.snsList {
+    margin-right: 24px;
+    color: rgb(34, 34, 34);
+}
+
+.snsLogo {
+    color: #000;
+}
+
+@media (max-width:390px) {
+
+    .ukalineSentence,
+    .flexibleSearchSentence {
+        font-size: 18px;
+        line-height: 30px;
+    }
+
+    .ukalineSentence {
+        margin-top: 28px;
+        margin-bottom: 0px;
+    }
+
+    .uklaine {
+        padding: 20px;
+    }
+
+    .uklaineButton,
+    .flexibleSearchButton {
+        font-size: 14px;
+    }
+
+    .buttonFlex {
+        margin-top: 10px;
+    }
+
+    .flexibleSearchContent {
+        padding: 10px;
+    }
+
+    .flexibleSearchButton {
+        padding: 10px 20px;
+        margin-top: 10px;
+    }
+}
+
+/*「終了」フッターのCSS*/

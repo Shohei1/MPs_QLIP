@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/rest.css" media="all">
+    <link href="CSS/style.css" rel="stylesheet" media="all">
+    <!-- <link rel="icon" href="img/favicon.ico">
+    <link rel="icon" sizes="192x192" href="img/apple-touch-icon.png"> -->
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+</head>
+
+<body>
+
+    <!--ヘッダーのロゴとメニューと各種ボタン-->
+    <header>
+        <!--「開始」ナビ-->
+        <div class="menuAround">
+            <!--「開始」logo-->
+            <div class="logo">
+                <svg width="102" height="32" style="display: block; fill: currentcolor;">
+                    <path
+                        d="M29.24 22.68c-.16-.39-.31-.8-.47-1.15l-.74-1.67-.03-.03c-2.2-4.8-4.55-9.68-7.04-14.48l-.1-.2c-.25-.47-.5-.99-.76-1.47-.32-.57-.63-1.18-1.14-1.76a5.3 5.3 0 00-8.2 0c-.47.58-.82 1.19-1.14 1.76-.25.52-.5 1.03-.76 1.5l-.1.2c-2.45 4.8-4.84 9.68-7.04 14.48l-.06.06c-.22.52-.48 1.06-.73 1.64-.16.35-.32.73-.48 1.15a6.8 6.8 0 007.2 9.23 8.38 8.38 0 003.18-1.1c1.3-.73 2.55-1.79 3.95-3.32 1.4 1.53 2.68 2.59 3.95 3.33A8.38 8.38 0 0022.75 32a6.79 6.79 0 006.75-5.83 5.94 5.94 0 00-.26-3.5zm-14.36 1.66c-1.72-2.2-2.84-4.22-3.22-5.95a5.2 5.2 0 01-.1-1.96c.07-.51.26-.96.52-1.34.6-.87 1.65-1.41 2.8-1.41a3.3 3.3 0 012.8 1.4c.26.4.45.84.51 1.35.1.58.06 1.25-.1 1.96-.38 1.7-1.5 3.74-3.21 5.95zm12.74 1.48a4.76 4.76 0 01-2.9 3.75c-.76.32-1.6.41-2.42.32-.8-.1-1.6-.36-2.42-.84a15.64 15.64 0 01-3.63-3.1c2.1-2.6 3.37-4.97 3.85-7.08.23-1 .26-1.9.16-2.73a5.53 5.53 0 00-.86-2.2 5.36 5.36 0 00-4.49-2.28c-1.85 0-3.5.86-4.5 2.27a5.18 5.18 0 00-.85 2.21c-.13.84-.1 1.77.16 2.73.48 2.11 1.78 4.51 3.85 7.1a14.33 14.33 0 01-3.63 3.12c-.83.48-1.62.73-2.42.83a4.76 4.76 0 01-5.32-4.07c-.1-.8-.03-1.6.29-2.5.1-.32.25-.64.41-1.02.22-.52.48-1.06.73-1.6l.04-.07c2.16-4.77 4.52-9.64 6.97-14.41l.1-.2c.25-.48.5-.99.76-1.47.26-.51.54-1 .9-1.4a3.32 3.32 0 015.09 0c.35.4.64.89.9 1.4.25.48.5 1 .76 1.47l.1.2c2.44 4.77 4.8 9.64 7 14.41l.03.03c.26.52.48 1.1.73 1.6.16.39.32.7.42 1.03.19.9.29 1.7.19 2.5zM41.54 24.12a5.02 5.02 0 01-3.95-1.83 6.55 6.55 0 01-1.6-4.48 6.96 6.96 0 011.66-4.58 5.3 5.3 0 014.08-1.86 4.3 4.3 0 013.7 1.92l.1-1.57h2.92V23.8h-2.93l-.1-1.76a4.52 4.52 0 01-3.88 2.08zm.76-2.88c.58 0 1.09-.16 1.57-.45.44-.32.8-.74 1.08-1.25.25-.51.38-1.12.38-1.8a3.42 3.42 0 00-1.47-3.04 2.95 2.95 0 00-3.12 0c-.44.32-.8.74-1.08 1.25a4.01 4.01 0 00-.38 1.8 3.42 3.42 0 001.47 3.04c.47.29.98.45 1.55.45zM53.45 8.46c0 .35-.06.67-.22.93-.16.25-.38.48-.67.64-.29.16-.6.22-.92.22-.32 0-.64-.06-.93-.22a1.84 1.84 0 01-.67-.64 1.82 1.82 0 01-.22-.93c0-.36.07-.68.22-.93.16-.3.39-.48.67-.64.29-.16.6-.23.93-.23a1.84 1.84 0 011.6.86 2 2 0 01.21.94zm-3.4 15.3V11.7h3.18v12.08h-3.19zm11.68-8.9v.04c-.15-.07-.35-.1-.5-.13-.2-.04-.36-.04-.55-.04-.89 0-1.56.26-2 .8-.48.55-.7 1.32-.7 2.31v5.93h-3.19V11.69h2.93l.1 1.83c.32-.64.7-1.12 1.24-1.48a3.1 3.1 0 011.81-.5c.23 0 .45.02.64.06.1.03.16.03.22.06v3.2zm1.28 8.9V6.74h3.18v6.5c.45-.58.96-1.03 1.6-1.38a5.02 5.02 0 016.08 1.31 6.55 6.55 0 011.6 4.49 6.96 6.96 0 01-1.66 4.58 5.3 5.3 0 01-4.08 1.86 4.3 4.3 0 01-3.7-1.92l-.1 1.57-2.92.03zm6.15-2.52c.57 0 1.08-.16 1.56-.45.44-.32.8-.74 1.08-1.25.26-.51.38-1.12.38-1.8 0-.67-.12-1.28-.38-1.79a3.75 3.75 0 00-1.08-1.25 2.95 2.95 0 00-3.12 0c-.45.32-.8.74-1.09 1.25a4.01 4.01 0 00-.38 1.8 3.42 3.42 0 001.47 3.04c.47.29.98.45 1.56.45zm7.51 2.53V11.69h2.93l.1 1.57a3.96 3.96 0 013.54-1.89 4.1 4.1 0 013.82 2.44c.35.76.54 1.7.54 2.75v7.24h-3.19v-6.82c0-.84-.19-1.5-.57-1.99-.38-.48-.9-.74-1.56-.74-.48 0-.9.1-1.27.32-.35.23-.64.52-.86.93a2.7 2.7 0 00-.32 1.35v6.92h-3.16zm12.52 0V6.73h3.19v6.5a4.67 4.67 0 013.73-1.89 5.02 5.02 0 013.95 1.83 6.57 6.57 0 011.59 4.48 6.95 6.95 0 01-1.66 4.58 5.3 5.3 0 01-4.08 1.86 4.3 4.3 0 01-3.7-1.92l-.09 1.57-2.93.03zm6.18-2.53c.58 0 1.09-.16 1.56-.45.45-.32.8-.74 1.09-1.25.25-.51.38-1.12.38-1.8a3.42 3.42 0 00-1.47-3.04 2.95 2.95 0 00-3.12 0c-.44.32-.8.74-1.08 1.25a3.63 3.63 0 00-.38 1.8 3.42 3.42 0 001.47 3.04c.47.29.95.45 1.55.45z">
+                    </path>
+                </svg>
+            </div>
+            <!--「終了」logo-->
+
+            <!--「開始」center nav-->
+            <div class="nav">
+                <div class="navTwoParts">
+                    <!-- <div class="smallSearchPrimary">
+                        <div class="smallSearchSecondary">
+                            <button>
+                                <div>
+                                    検索を始める
+                                </div>
+                                <div>
+                                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                        role="presentation" focusable="false"
+                                        style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;">
+                                        <g fill="none">
+                                            <path
+                                                d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9">
+                                            </path>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </button>
+                        </div>
+                    </div> -->
+                    <div>
+                        <form action="">
+                            <div class="navA">
+                                <div class="nav2">
+                                    <div>
+                                        <button class="menuButton menubutton1"><span
+                                                class="menuButtonText">宿泊先</span></button>
+                                    </div>
+                                    <div>
+                                        <button class="menuButton menubutton2"><span
+                                                class="menuButtonText">体験</span></button>
+                                    </div>
+                                </div>
+                                <div class="nav3">
+                                    <button class="menuButton menubutton3">オンライン体験</button>
+                                </div>
+                            </div>
+                            <!--クラスの名前を変えるbigSearchPrimary-->
+                            <div class="bigSearchPrimary">
+                                <div class="bigSearhSecondary">
+                                    <!-- <button class="button01">
+                                        <div class="mushimegane">
+                                            行き先はどちらですか？
+                                        </div>
+                                    </button> -->
+                                    <div class="bigSearchLeft">
+                                        <div>
+                                            <label class="bigSearchLabel" for="">
+                                                <div>
+                                                    <div class="bigSearchText">
+                                                        ロケーション
+                                                    </div>
+                                                    <input class="bigSearchInput" placeholder="行き先はどちらですか？" value="">
+                                                </div>
+                                            </label>
+                                            <div>
+                                                <div>
+                                                    <section>
+                                                        <!--ここはあとでやる-->
+                                                    </section>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bigSearchLine"></div>
+                                    <div class="bigSearchMiddle">
+                                        <div class="bigSearchMiddleFirst">
+                                            <div class="bigSearchText">
+                                                <div>チェックイン</div>
+                                                <div>日付を入力</div>
+                                            </div>
+                                        </div>
+                                        <div class="bigSearchMiddleSecond">
+                                            <div class="bigSearchText">
+                                                <div>チェックイン</div>
+                                                <div>日付を入力</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bigSearchLine"></div>
+                                    <div class="bigSearchLeft">
+                                        <div>
+                                            <label for="">
+                                                <div>
+                                                    <div class="bigSearchText">
+                                                        人数
+                                                    </div>
+                                                    <input class="bigSearchInput" placeholder="ゲスト数を入力" value="">
+                                                </div>
+                                            </label>
+                                            <div>
+                                                <div>
+                                                    <section>
+                                                        <!--ここはあとでやる-->
+                                                    </section>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--「終了」center nav-->
+
+            <!--「開始」left nav-->
+            <div class="leftMenu">
+                <nav class="leftMenuNav">
+                    <div class="leftMenuHost">
+                        <a class="menuHostLink" href="">
+                            <div class="leftMenuHostText">ホストになる</div>
+                        </a>
+                        <button class="mainMenu">
+                            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                role="presentation" focusable="false"
+                                style="display: block; height: 16px; width: 16px; fill: currentcolor;">
+                                <path
+                                    d="m8.002.25a7.77 7.77 0 0 1 7.748 7.776 7.75 7.75 0 0 1 -7.521 7.72l-.246.004a7.75 7.75 0 0 1 -7.73-7.513l-.003-.245a7.75 7.75 0 0 1 7.752-7.742zm1.949 8.5h-3.903c.155 2.897 1.176 5.343 1.886 5.493l.068.007c.68-.002 1.72-2.365 1.932-5.23zm4.255 0h-2.752c-.091 1.96-.53 3.783-1.188 5.076a6.257 6.257 0 0 0 3.905-4.829zm-9.661 0h-2.75a6.257 6.257 0 0 0 3.934 5.075c-.615-1.208-1.036-2.875-1.162-4.686l-.022-.39zm1.188-6.576-.115.046a6.257 6.257 0 0 0 -3.823 5.03h2.75c.085-1.83.471-3.54 1.059-4.81zm2.262-.424c-.702.002-1.784 2.512-1.947 5.5h3.904c-.156-2.903-1.178-5.343-1.892-5.494l-.065-.007zm2.28.432.023.05c.643 1.288 1.069 3.084 1.157 5.018h2.748a6.275 6.275 0 0 0 -3.929-5.068z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div>
+                        <button class="leftMainMenuButton">
+                            <div class="leftMainMenuButtonBelow1">
+                                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                    role="presentation" focusable="false"
+                                    style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible;">
+                                    <g fill="none" fill-rule="nonzero">
+                                        <path d="m2 16h28"></path>
+                                        <path d="m2 24h28"></path>
+                                        <path d="m2 8h28"></path>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="leftMainMenuButtonBelow2">
+                                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                    role="presentation" focusable="false"
+                                    style="display: block; height: 30px; width: 30px; fill: currentcolor;">
+                                    <path
+                                        d="m16 .7c-8.437 0-15.3 6.863-15.3 15.3s6.863 15.3 15.3 15.3 15.3-6.863 15.3-15.3-6.863-15.3-15.3-15.3zm0 28c-4.021 0-7.605-1.884-9.933-4.81a12.425 12.425 0 0 1 6.451-4.4 6.507 6.507 0 0 1 -3.018-5.49c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5a6.513 6.513 0 0 1 -3.019 5.491 12.42 12.42 0 0 1 6.452 4.4c-2.328 2.925-5.912 4.809-9.933 4.809z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+            <!--「終了」left nav-->
+        </div>
+        <!--「終了」ナビ-->
+
+    </header>
+
+    <!--ここからがメインbody-->
+    <main>
+        <!--ウクライナ難民文とボタン-->
+
+        </picture>
+        <div class="uklaineSuper">
+            <div class="uklaine">
+                <span class="ukalineSentence">
+                    ウクライナ難民100,000人への滞在先提供にご協力ください
+                </span>
+                <div class="buttonFlex">
+                    <button class="uklaineButton">
+                        もっと詳しく
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!--柔軟な検索写真とボタン-->
+        <section class="flexibleSearch">
+            <div class="photoEdit">
+                <!--この下を編集して画像の切り替えをしてみる。 -->
+                <picture>
+                    <source media="(min-width:1200px)" srcset="images/web/cabin-in-the-wood.jpeg">
+                    <source media="(min-width:415px)" srcset="images/web/cabin-in-the-wood.jpeg">
+                    <img src="images/phone/phone-cabin-in-the-wood.jpg" alt="">
+                </picture>
+                <!-- <img src="images/web/cabin in the wood.jpeg" alt="none"> -->
+                <div class="flexibleSearchContent">
+                    <div>
+                        <span class="flexibleSearchSentence">好奇心のおもむくまま、旅と予約しよう</span>
+                    </div>
+                    <button class=" flexibleSearchButton">
+                        <div class="flexibleSearchButtonSentence">柔軟な検索</div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- レスポンシブ対応の写真替えの参考
+        <picture>
+            <source media="(min-width:1200px)" srcset="images/example/big-ph_php1920w.jpg">
+            <source media="(min-width:560px)" srcset="images/example/medium-ph_php378w@2x.jpg">
+            <img src="images/example/small-ph_php378w.jpg" alt="">
+        </picture> -->
+
+        <!--次に行く店のアイディアを見つけよう-->
+        <Section class="ideaForNext">
+            <div class="ideaForNext2">
+                <div class="ideaForNextSentence">
+                    <span>
+                        次に行く旅のアイディアを見つけよう
+                    </span>
+                </div>
+                <div class="ideaForNextContents">
+
+                    <div class="ideaForNextEach1">
+                        <div class="NextEachPhoto1">
+                            <img src="images/web/1.jpg" width="300" height="200">
+                        </div>
+                        <div class="NextEachDestination1">
+                            <div class="destination">
+                                <span>東京</span>
+                            </div>
+                            <div class="destinationDistance">目的地まで404km</div>
+                        </div>
+                    </div>
+
+                    <div class="ideaForNextEach2">
+                        <div class="NextEachPhoto1">
+                            <img src="images/web/2.jpg" width="300" height="200">
+                        </div>
+                        <div class="NextEachDestination1">
+                            <div class="destination">
+                                <span>田辺</span>
+                            </div>
+                            <div class="destinationDistance">目的地まで105km</div>
+                        </div>
+                    </div>
+
+                    <div class="ideaForNextEach3">
+                        <div class="NextEachPhoto1">
+                            <img src="images/web/3.jpg" width="300" height="200">
+                        </div>
+                        <div class="NextEachDestination1">
+                            <div class="destination">
+                                <span>熱海市</span>
+                            </div>
+                            <div class="destinationDistance">目的地まで329km</div>
+                        </div>
+                    </div>
+
+                    <div class="ideaForNextEach4">
+                        <div class="NextEachPhoto1">
+                            <img src="images/web/4.jpg" width="300" height="200">
+                        </div>
+                        <div class="NextEachDestination1">
+                            <div class="destination">
+                                <span>小田原</span>
+                            </div>
+                            <div class="destinationDistance">目的地まで339km</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </Section>
+
+        <!--Airbnb体験を検索しよう-->
+        <section class="exploreExperiences">
+            <div class="exploreExperiencesUnder">
+                <div class="exploreExperiencesSentence">
+                    Airbnb体験を検索しよう
+                </div>
+                <div class="twoTypesOfExperiences">
+
+                    <div class="offlineExperience">
+                        <div class="experiencePhoto">
+                            <img src="images/web/airbnb cave.jpeg" width="630" height="720">
+                            <div class="experienceContent">
+                                <div class="experienceSentence">旅行中に<br>楽しめる体験</div>
+                                <button class="experienceButton">体験</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="onlineExperience">
+                        <div class="experiencePhoto">
+                            <img src="images/web/airbnb experience.jpeg" width="630" height="720">
+
+                            <div class="experienceContent">
+                                <div class="experienceSentence">お家から<br>楽しめる体験</div>
+                                <button class="experienceButton">オンライン体験</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!--ホスティングについて知りたいことはありますか？-->
+        <section class="hosting">
+            <div class="hostingPhoto">
+                <img src="images/web/airbnb hosting.jpeg" width="1280px" height="650px" alt="none">
+                <div class="hostingContent">
+                    <div class="hostingSentence">
+                        ホスティングについて<br>知りたいことは<br>ありますか？
+                    </div>
+                    <button class="hostingButton">
+                        スーパーホストに質問しよう
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--１：最上位の枠組み-->
+    <div class="footerTop">
+        <!--２：２番の枠組み。真ん中に来るようにmac-widt:1120px-->
+        <div class="footer2">
+            <!--３：３番目の枠組み。フッターの親になる-->
+            <div class="footer3">
+                <!--４：フッター-->
+                <footer class="footerContents">
+                    <!--５：フッター下の枠組み。セクションと一番下のコンテンツを分ける-->
+                    <div class="footer4">
+                        <!--6：セクションの親になる枠組み。flexを使う-->
+                        <div class="footer5Flex">
+                            <!--7：4つのセクション。padding-right,left 12px-->
+                            <!--８：セクション１ サポート-->
+                            <section class="support">
+                                <!--９：セクション内のh3を囲む枠組み-->
+                                <div>
+                                    <!--１０：h3のテキスト-->
+                                    <h3 class="footerUpTitle">サポート</h3>
+                                </div>
+                                <!--９：セクション内のリスト-->
+                                <ul class="sectionUnorganizedList">
+                                    <!--１０：セクション内のリストのテキスト-->
+                                    <li class="sectionList">
+                                        <a href="" class="listText">ヘルプセンター</a>
+                                    </li>
+                                    <li class="sectionList">
+                                        <a href="" class="listText">安全に関する情報</a>
+                                    </li>
+                                    <li class="sectionList">
+                                        <a href="" class="listText">キャンセルオプション</a>
+                                    </li>
+                                    <li class="sectionList">
+                                        <a href="" class="listText">Airbnbの新型コロナウイルスに対する取り組み</a>
+                                    </li>
+                                    <li class="sectionList">
+                                        <a href="" class="listText">障害のある方へのサポート</a>
+                                    </li>
+                                    <li class="sectionList">
+                                        <a href="" class="listText">近隣トラブルを報告する</a>
+                                    </li>
+                                </ul>
+                            </section>
+                            <!--８：セクション２ サポート-->
+                            <section class="support">
+                                <!--９：セクション内のh3を囲む枠組み-->
+                                <div>
+                                    <!--１０：h3のテキスト-->
+                                    <h3 class="footerUpTitle">コミュニティ</h3>
+                                </div>
+                                <!--９：セクション内のリスト-->
+                                <ul class="sectionUnorganizedList">
+                                    <!--１０：セクション内のリストのテキスト-->
+                                    <li class="sectionList">
+                                        <a href="" class="listText">Airbnb.org：災害発生時の滞在先</a>
+                                    </li>
+                                    <li class="sectionList">
+                                        <a href="" class="listText">アフガン難民支援</a>
+                                    </li>
+                                    <li class="sectionList">
+                                        <a href="" class="listText">差別に対する取り組み</a>
+                                    </li>
+                                </ul>
+                            </section>
+                            <!--８：セクション３ サポート-->
+                            <section class="support">
+                                <!--９：セクション内のh3を囲む枠組み-->
+                                <div>
+                                    <!--１０：h3のテキスト-->
+                                    <h3 class="footerUpTitle">ホスティング</h3>
+                                </div>
+                                <!--９：セクション内のリスト-->
+                                <ul class="sectionUnorganizedList">
+                                    <!--１０：セクション内のリストのテキスト-->
+                                    <li class="sectionList">
+                                        <a href="" class="listText">ホスティングをはじめる</a>
+                                    </li>
+                                    <li class="sectionList">
+                                        <a href="" class="listText">AirCover：ホストに対する保護措置</a>
+                                    </li>
+                                    <li class="sectionList">
+                                        <a href="" class="listText">ホスト向けリソースを確認</a>
+                                    </li>
+                                    <li class="sectionList">
+                                        <a href="" class="listText">コミュニティフォーラムへ</a>
+                                    </li>
+                                    <li class="sectionList">
+                                        <a href="" class="listText">責任をもってホスティングする方法</a>
+                                    </li>
+                                </ul>
+                            </section>
+                            <!--８：セクション４ サポート-->
+                            <section class="support">
+                                <!--９：セクション内のh3を囲む枠組み-->
+                                <div>
+                                    <!--１０：h3のテキスト-->
+                                    <h3 class="footerUpTitle">企業情報</h3>
+                                </div>
+                                <!--９：セクション内のリスト-->
+                                <ul class="sectionUnorganizedList">
+                                    <!--１０：セクション内のリストのテキスト-->
+                                    <li class="sectionList">
+                                        <a href="" class="listText">ニュースルーム</a>
+                                    </li>
+                                    <li class="sectionList">
+                                        <a href="" class="listText">新機能のご紹介</a>
+                                    </li>
+                                    <li class="sectionList">
+                                        <a href="" class="listText">Airbnb創業者からの手紙</a>
+                                    </li>
+                                    <li class="sectionList">
+                                        <a href="" class="listText">採用情報</a>
+                                    </li>
+                                    <li class="sectionList">
+                                        <a href="" class="listText">株主・投資家のみなさまへ</a>
+                                    </li>
+                                    <li class="sectionList">
+                                        <a href="" class="listText">Airbnb Luxe</a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                        <!--6：一番最後のところ-->
+                        <section class="footerBottom">
+                            <div class="footerBottom1">
+                                <div>
+                                    <div>
+                                        <a target="_blank" href="/about/company-details" class="footerBottomLink">
+                                            <span class="footerBottomSentence">Airbnb Global Services Limited<br>
+                                                観光庁長官(01)第S0001号(2018年6月15日-2023年6月14日)</span></a>
+                                    </div>
+                                </div>
+                                <div class="FooterBottom2">
+                                    <span class="FooterBottom2Sen">
+                                        © 2022 Airbnb, Inc.
+                                    </span>
+                                    <span>・</span>
+                                    <a href="/terms/privacy_policy" class="footerBottom2Sentence">プライバシー</a>
+                                    <span>・</span>
+                                    <a href="/terms/privacy_policy" class="footerBottom2Sentence">利用規約</a>
+                                    <span>・</span>
+                                    <a href="/terms/privacy_policy" class="footerBottom2Sentence">サイトマップ</a>
+                                    <span>・</span>
+                                    <a href="/terms/privacy_policy" class="footerBottom2Sentence">企業情報</a>
+                                </div>
+                            </div>
+                            <!--フレックスにする-->
+                            <div class="footerBottom3">
+                                <!--フレックスにする-->
+                                <div class="footerBottom3Flex1">
+                                    <span class="footerBottom3Span">
+                                        <!--フレックスにする-->
+                                        <button class="footerBottom3Botton1">
+                                            <span class="marks">
+                                                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                                                    aria-hidden="true" role="presentation" focusable="false"
+                                                    style="display: block; height: 16px; width: 16px; fill: currentcolor;">
+                                                    <path
+                                                        d="m8.002.25a7.77 7.77 0 0 1 7.748 7.776 7.75 7.75 0 0 1 -7.521 7.72l-.246.004a7.75 7.75 0 0 1 -7.73-7.513l-.003-.245a7.75 7.75 0 0 1 7.752-7.742zm1.949 8.5h-3.903c.155 2.897 1.176 5.343 1.886 5.493l.068.007c.68-.002 1.72-2.365 1.932-5.23zm4.255 0h-2.752c-.091 1.96-.53 3.783-1.188 5.076a6.257 6.257 0 0 0 3.905-4.829zm-9.661 0h-2.75a6.257 6.257 0 0 0 3.934 5.075c-.615-1.208-1.036-2.875-1.162-4.686l-.022-.39zm1.188-6.576-.115.046a6.257 6.257 0 0 0 -3.823 5.03h2.75c.085-1.83.471-3.54 1.059-4.81zm2.262-.424c-.702.002-1.784 2.512-1.947 5.5h3.904c-.156-2.903-1.178-5.343-1.892-5.494l-.065-.007zm2.28.432.023.05c.643 1.288 1.069 3.084 1.157 5.018h2.748a6.275 6.275 0 0 0 -3.929-5.068z">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                            <span class="marks2">
+                                                日本語(JP)
+                                            </span>
+                                        </button>
+                                    </span>
+                                    <span>
+                                        <button class="footerBottom3Botton2">
+                                            <span class="marks">
+                                                ¥
+                                            </span>
+                                            <span class="marks2">
+                                                JPY
+                                            </span>
+                                        </button>
+                                    </span>
+                                </div>
+                                <div class="sns">
+                                    <ul class="snsFlex">
+                                        <il class="snsList">
+                                            <a rel="noopener noreferrer" target="_blank"
+                                                href="https://www.facebook.com/AirbnbJapan" class="snsLogo"><svg
+                                                    viewBox="0 0 32 32" role="img" aria-hidden="false"
+                                                    aria-label="Facebookへ" focusable="false"
+                                                    style="height: 18px; width: 18px; display: block; fill: currentcolor;">
+                                                    <path
+                                                        d="m8 14.41v-4.17c0-.42.35-.81.77-.81h2.52v-2.08c0-4.84 2.48-7.31 7.42-7.35 1.65 0 3.22.21 4.69.64.46.14.63.42.6.88l-.56 4.06c-.04.18-.14.35-.32.53-.21.11-.42.18-.63.14-.88-.25-1.78-.35-2.8-.35-1.4 0-1.61.28-1.61 1.73v1.8h4.52c.42 0 .81.42.81.88l-.35 4.17c0 .42-.35.71-.77.71h-4.21v16c0 .42-.35.81-.77.81h-5.21c-.42 0-.8-.39-.8-.81v-16h-2.52a.78.78 0 0 1 -.78-.78"
+                                                        fill-rule="evenodd"></path>
+                                                </svg></a>
+                                        </il>
+                                        <il class="snsList">
+                                            <a rel="noopener noreferrer" target="_blank"
+                                                href="https://twitter.com/airbnb_jp" class="snsLogo"><svg
+                                                    viewBox="0 0 32 32" role="img" aria-hidden="false"
+                                                    aria-label="Twitterへ" focusable="false"
+                                                    style="height: 18px; width: 18px; display: block; fill: currentcolor;">
+                                                    <path
+                                                        d="m31 6.36c-1.16.49-2.32.82-3.55.95 1.29-.76 2.22-1.87 2.72-3.38a13.05 13.05 0 0 1 -3.91 1.51c-1.23-1.28-2.75-1.94-4.51-1.94-3.41 0-6.17 2.73-6.17 6.12 0 .49.07.95.17 1.38-4.94-.23-9.51-2.6-12.66-6.38-.56.95-.86 1.97-.86 3.09 0 2.07 1.03 3.91 2.75 5.06-1-.03-1.92-.3-2.82-.76v.07c0 2.89 2.12 5.42 4.94 5.98-.63.17-1.16.23-1.62.23-.3 0-.7-.03-1.13-.13a6.07 6.07 0 0 0 5.74 4.24c-2.22 1.74-4.78 2.63-7.66 2.63-.56 0-1.06-.03-1.43-.1 2.85 1.84 6 2.76 9.41 2.76 7.29 0 12.83-4.01 15.51-9.3 1.36-2.66 2.02-5.36 2.02-8.09v-.46c-.03-.17-.03-.3-.03-.33a12.66 12.66 0 0 0 3.09-3.16"
+                                                        fill-rule="evenodd"></path>
+                                                </svg></a>
+                                        </il>
+                                        <il class="snsList">
+                                            <a rel="noopener noreferrer" target="_blank"
+                                                href="https://instagram.com/airbnb" class="snsLogo"><svg
+                                                    viewBox="0 0 24 24" role="img" aria-hidden="false"
+                                                    aria-label="Instagramへ" focusable="false"
+                                                    style="height: 18px; width: 18px; display: block; fill: currentcolor;">
+                                                    <path
+                                                        d="m23.09.91c-.61-.61-1.33-.91-2.17-.91h-17.84c-.85 0-1.57.3-2.17.91s-.91 1.33-.91 2.17v17.84c0 .85.3 1.57.91 2.17s1.33.91 2.17.91h17.84c.85 0 1.57-.3 2.17-.91s.91-1.33.91-2.17v-17.84c0-.85-.3-1.57-.91-2.17zm-14.48 7.74c.94-.91 2.08-1.37 3.4-1.37 1.33 0 2.47.46 3.41 1.37s1.41 2.01 1.41 3.3-.47 2.39-1.41 3.3-2.08 1.37-3.41 1.37c-1.32 0-2.46-.46-3.4-1.37s-1.41-2.01-1.41-3.3.47-2.39 1.41-3.3zm12.66 11.63c0 .27-.09.5-.28.68a.92.92 0 0 1 -.67.28h-16.7a.93.93 0 0 1 -.68-.28.92.92 0 0 1 -.27-.68v-10.13h2.2a6.74 6.74 0 0 0 -.31 2.05c0 2 .73 3.71 2.19 5.12s3.21 2.12 5.27 2.12a7.5 7.5 0 0 0 3.75-.97 7.29 7.29 0 0 0 2.72-2.63 6.93 6.93 0 0 0 1-3.63c0-.71-.11-1.39-.31-2.05h2.11v10.12zm0-13.95c0 .3-.11.56-.31.77a1.05 1.05 0 0 1 -.77.31h-2.72c-.3 0-.56-.11-.77-.31a1.05 1.05 0 0 1 -.31-.77v-2.58c0-.29.11-.54.31-.76s.47-.32.77-.32h2.72c.3 0 .56.11.77.32s.31.47.31.76z"
+                                                        fill-rule="evenodd"></path>
+                                                </svg></a>
+                                        </il>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script src="Javascript/Airbnb.js"></script>
+</body>
+
+<!-- <script>
+    'use strict';
+    window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        header.classList.toggle("scroll-nav", window.scroll > 100);
+    });
+</script> -->
+<!--4/1 終わり。次はヘッダーの真ん中の部分から始める。iPddに書いてある構造で始めるようにする。次からはここにメモを書いていこう。-->
+
+
+</html>
