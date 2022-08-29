@@ -13,7 +13,7 @@ Also the main focus here was to make it responsive.
 Using node.js or php was a bit challenging so I used them in the next project.
 
 3: MyPeople
-I was able to use node.js, database and scss on this project.
+I used node.js, database and scss on this project.
 
 4: React app
 I used firebase and react to deploy my first react app.
