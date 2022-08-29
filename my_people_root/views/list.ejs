@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My People</title>
+    <link rel="stylesheet" href="/css/reset.css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/common.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="h-wrapper c-flex_DColumn_JcC_AiCenter">
+            <a href="/" class="h-title">My People</a>
+        </div>
+    </header>
+    <main>
+        <section class="m-section">
+            <div class="list_wrapper c-flex_DColumn_JcC c-gap30">
+                <ul class="table-body c-flex_DColumn c-gap30">
+                    <% users.forEach((item) => { %>
+                    <li class="list_list c-flex_DRow_AiCenter">
+                        <div class="people-data">
+                            <span class="name-column"><%= item.name %></span>
+                        </div>
+                        <div class="people-menu c-flex_DRow_AiCenter c-gap10">
+                            <form action="/delete/<%= item.id %>" method="post"
+                                onclick="return confirm('Do you want to delete this?')">
+                                <input type="submit" value="delete" class="list_input">
+                            </form>
+                            <a id="list_btn" href="/edit/<%= item.id %>"> <span class="list_edit">edit</span></a>
+                        </div>
+                    </li>
+                    <% })%>
+                </ul>
+                <div>
+                    <a href="/new">
+                        <div class="c-flex_DRow_JcC_AiCenter">
+                            <p class="list_add">add more!</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="f-wrapper c-flex_DColumn_JcC_AiCenter">
+            <div class="c-flex_DRow_JcC_AiCenter">
+                <p class="f-text">contact：</p>
+                <div class="f-sns c-flex_DRow_JcC_AiCenter">
+                    <a href="" class="f-icon">
+                        <i class="fa-brands fa-facebook c-f-icon f-icon1"></i>
+                    </a>
+                    <a href="" class="f-icon">
+                        <i class="fa-brands fa-instagram c-f-icon f-icon2"></i>
+                    </a>
+                    <a href="" class="f-icon">
+                        <i class="fa-brands fa-twitter c-f-icon f-icon3"></i>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <p class="f-subText">Copyright (C) 2022 Shohei Yoshida All Rights Reserved. 無断転載大丈夫
+                </p>
+            </div>
+        </div>
+    </footer>
+    </div>
+
+    <!-- <script>
+        let showAlert = document.getElementbyId(list_btn);
+        showAlert.addEventListner('click', alert('Are you sure?'));
+    </script> -->
+</body>
+
+</html>
