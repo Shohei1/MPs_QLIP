@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+.introPageText {
+    color: var(--color_common);
+    font-size: clamp(12px, 2vw, 36px);
+    line-height: clamp(18px, 2vw, 42px);
+}
+
+.intro_main {
+    gap: 20px;
+}
+
+
+
+.intro_content {
+    width: 30vw;
+    height: 30vw;
+    min-width: 230px;
+    min-height: 230px;
+    max-width: 550px;
+    max-height: 550px;
+    /* width: max-content;
+    height: max-content; */
+    padding: 30px;
+    border-radius: 20px;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.intro_firstContent {
+    background-color: var(--color_primary);
+
+}
+
+
+/*start @media*/
+@media(min-width:641px) {
+    .intro_content {
+        padding: 40px;
+    }
+}
+
+@media(min-width:988px) {
+    .intro_mainContents {
+        flex-direction: row;
+        gap: 30px;
+    }
+
+}
+
+@media(min-width:1480px) {
+    .intro_content {
+        padding: 60px;
+    }
+}
+
+/*end @media*/

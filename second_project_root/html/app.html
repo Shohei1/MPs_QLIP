@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/common.css" type="text/css">
+    <link rel="stylesheet" href="../css/eachPage/appPage.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.0.5/remodal.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.0.5/remodal-default-theme.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.0.5/remodal.min.js"></script>
+</head>
+
+<body>
+    <div id="cursor"></div>
+    <div id="stalker"></div>
+    <header id="headerTop">
+        <div class="fixedSidebar c-flex_DColumn_AiCenter">
+            <div class="fixedIcon c-flex_DRow_JcC_AiCenter">
+                <a href="../index.html" class="sideBarIcon">
+                    <i class="fa-solid fa-dice-three c-icon icon1"></i>
+                </a>
+                <a href="./app.html" class="sideBarIcon">
+                    <i class="fa-brands fa-artstation c-icon icon2"></i>
+                </a>
+                <a href="./discovery.html" class="sideBarIcon">
+                    <i class="fa-brands fa-cc-discover c-icon icon3"></i>
+                </a>
+                <a href="./html&css.html" class="sideBarIcon">
+                    <i class="fa-brands fa-html5 c-icon icon1"></i>
+                </a>
+                <a href="./js.html" class="sideBarIcon">
+                    <i class="fa-brands fa-js c-icon icon2"></i>
+                </a>
+                <a href="./myIntro.html" class="sideBarIcon">
+                    <i class="fa-solid fa-user c-icon icon3"></i>
+                </a>
+            </div>
+            <div class="flexHeaderSearch">
+                <input class="headerSearch" type="text" placeholder="search">
+            </div>
+        </div>
+
+    </header>
+    <div class="wrapper">
+        <main>
+            <section class="appPageFirst c-flex_DClumn">
+                <h1 class="c-headline">My People</h1>
+                <div class="c-flex_DClumn">
+                    <div class="appPageFirstContent c-flex_DRow_JcC_AiCenter">
+                        <h2 class="c-headline" id="nameOutputing">This <br> week</h2>
+                    </div>
+                    <div class="appPageSecondContentWrapper c-flex_DRow_AiCenter">
+                        <!-- ここのアンカークリックでモーダルが表示 -->
+                        <a href="#modal_c" class="btn">
+                            <div class="appPageSecondContent appPage_addData c-flex_DRow_JcC_AiCenter">
+                                <p>remember<br>me?</p>
+                            </div>
+                        </a>
+                        <a href="appPage_added.html">
+                            <div class="appPageSecondContent appPage_listData c-flex_DRow_JcC_AiCenter">
+                                <p id="nameOutput">Yes I do！</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- ここがモーダルの記述 -->
+                <div class="remodal bgcolor" data-remodal-id="modal_">
+
+                    <div class="remodal" data-remodal-id="modal_c">
+                        <!-- <h2 class="c-contentHeadline">I will contact...</h2> -->
+
+                        <!-- ＃＃＃＃ここのフォームのmethod属性は大事＃＃＃＃ -->
+                        <form name="peopleInfo" method="POST">
+                            <div class="appPageAddModal c-flex_DColumn_JcC_AiCenter">
+                                <div class="c-flex_DRow_AiCenter c-gap10 c-mb10">
+                                    <label class="color_common">Name :</label>
+                                    <input type="text" class="addModalInput" id="myPeopleName" name="name">
+                                </div>
+                                <div class="c-flex_DRow c-gap10">
+
+                                    <!-- <input data-remodal-action="cancel" class="data_remodal-btn bg-color_primary"
+                                        onclick="clearText()" value="Cancel">
+                                    <input data-remodal-action="confirm" type="submit" id="submit_btn"
+                                        class="data_remodal-btn bg-color_secondary" onclick="addData()" value="Submit"> -->
+
+                                    <button data-remodal-action="cancel" class="data_remodal-btn bg-color_primary"
+                                        onclick="clearText()">Cancel</button>
+                                    <button data-remodal-action="confirm" id="submit_btn"
+                                        class="data_remodal-btn bg-color_secondary" onclick="addData()">OK</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+
+        </main>
+    </div>
+    <footer>
+        <div class="layout-footer-wrapper c-flex_DColumn_AiCenter">
+            <div>
+                <p class="f-text">3S : Shohei's Skill Share</p>
+            </div>
+            <div class="c-flex_DRow_JcC_AiCenter">
+                <p class="f-text">contact：</p>
+                <div class="f-sns c-flex_DRow_JcC_AiCenter">
+                    <a href="" class="f-Icon">
+                        <i class="fa-brands fa-facebook c-f-icon f-icon1"></i>
+                    </a>
+                    <a href="" class="f-Icon">
+                        <i class="fa-brands fa-instagram c-f-icon f-icon2"></i>
+                    </a>
+                    <a href="" class="f-Icon">
+                        <i class="fa-brands fa-twitter c-f-icon f-icon3"></i>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <p class="f-subText"><small>Copyright (C) 2022 Shohei Yoshida All Rights Reserved. 無断転載大丈夫</small>
+                </p>
+            </div>
+        </div>
+    </footer>
+    </div>
+
+    <script src="../js/script.js"></script>
+    <!-- <script src="app.js"></script> -->
+    <!-- <script src="../../../../../../../Applications/MAMP/htdocs/list-app/app.js"></script> -->
+</body>
+
+</html>
+
+<!-- <script>
+    document.getElementById('submit_btn').addEventListener('click', function () {
+        xhr = new XMLHttpRequest();
+        xhr.open('GET', '/api/hello');
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    alert(xhr.response);
+                } else {
+                    alert('データが正常に送れませんでした');
+                }
+            }
+        }
+        xhr.send();
+    });
+</script> -->

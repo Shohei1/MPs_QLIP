@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+.topPage_menu {
+    gap: 3vw;
+}
+
+.topPage_menu_container {
+    text-align: center;
+    color: white;
+    width: 50vw;
+    height: 10vw;
+    border-radius: 10px;
+    font-size: clamp(12px, 3vw, 48px);
+}
+
+/* .topPage_container1 {
+    background-color: var(--color_top);
+} */
+
+.topPage_container2 {
+    background-color: var(--color_primary);
+}
+
+.topPage_container3 {
+    background-color: var(--color_secondary);
+}

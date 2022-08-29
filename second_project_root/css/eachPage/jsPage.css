@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+
+.jsContents {
+    width: 100%;
+    margin: 50px auto 40px;
+}
+
+.jsFirstContent {
+    /*「vw」は「viewport width」の略で、「画面幅に対する割合」の単位です。
+例えば「30vw」の場合は、画面幅に対する30%が要素の幅・高さに適用されます。
+つまり、画面幅が960pxなら、その30％にあたる「288px × 288px」分の正方形が表示できます。*/
+    width: 40vw;
+    height: 40vw;
+    min-width: 290px;
+    min-height: 290px;
+    max-width: 720px;
+    max-height: 720px;
+    margin: 0 auto 30px;
+    background-color: var(--color_primary);
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.jsFirstContent:hover {
+    opacity: 0.8;
+}
+
+@media(min-width:750px) {
+    .jsContents {
+        flex-direction: row;
+        justify-content: center;
+        gap: 40px;
+        margin-bottom: 80px;
+    }
+
+    .jsFirstContent {
+        margin: 0;
+    }
+
+}

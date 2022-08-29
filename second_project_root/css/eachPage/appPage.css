@@ -1,0 +1,273 @@
+@charset "UTF-8";
+
+
+
+
+.appPageFirstContent {
+    width: 35vw;
+    height: 35vw;
+    min-width: 290px;
+    min-height: 290px;
+    max-width: 580px;
+    max-height: 580px;
+    margin: 0 auto 30px;
+    background-color: var(--color_top);
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.appPageFirstContent:hover {
+    opacity: 0.8;
+    transform: translateY(-5px);
+}
+
+.appPageSecondContentWrapper {
+    width: 35vw;
+    height: auto;
+    min-width: 290px;
+    max-width: 580px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.appPageSecondContent {
+    /* width: 13vw; */
+    width: calc((35vw - 30px)/2);
+    height: calc((35vw - 30px)/2);
+    min-width: 130px;
+    min-height: 130px;
+    max-width: calc((580px - 30px)/2);
+    max-height: calc((580px - 30px)/2);
+    /* margin: 0 auto 30px; */
+    background-color: var(--color_primary);
+    border-radius: 20px;
+    transition: 0.5s;
+    font-size: 1rem;
+    color: var(--color_common);
+    text-align: center;
+    font-size: clamp(24px, 3vw, 48px);
+}
+
+.appPage_addData {
+    background-color: var(--color_secondary);
+}
+
+.appPage_listData {
+    background-color: var(--color_primary);
+}
+
+
+.appPageSecondContent:hover {
+    opacity: 0.8;
+    transform: translateY(-5px);
+}
+
+.appPageFirst {
+    gap: 30px;
+}
+
+/* ここから問い合わせ */
+
+.addModalInput {
+    height: clamp(20px, 2vw, 30px);
+    border-radius: 10px;
+    border: none;
+    text-indent: 10px;
+}
+
+.appPageAddModal {
+    width: 35vw;
+    height: 35vw;
+    min-width: 290px;
+    min-height: 290px;
+    max-width: 620px;
+    max-height: 620px;
+    margin: 0 auto 30px;
+    background-color: var(--color_top);
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.data_remodal-btn {
+    width: 100px;
+    height: clamp(20px, 2vw, 30px);
+    /* padding: min(1vw, 12px) 0; */
+    cursor: pointer;
+    border: 0;
+    color: var(--color_common);
+    border-radius: 10px;
+    transition: 0.5s;
+    text-align: center;
+}
+
+.data_remodal-btn:hover {
+    opacity: 0.8;
+    transform: translateY(-3px);
+}
+
+/* 
+
+.Form {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 720px;
+    background-color: black;
+}
+
+@media screen and (max-width: 480px) {
+    .Form {
+        margin-top: 40px;
+    }
+}
+
+.Form-Item {
+
+    padding-top: 24px;
+    padding-bottom: 24px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 480px) {
+    .Form-Item {
+        padding-left: 14px;
+        padding-right: 14px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        flex-wrap: wrap;
+    }
+}
+
+
+
+.Form-Item-Label {
+    width: 100%;
+    max-width: 248px;
+    letter-spacing: 0.05em;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+@media screen and (max-width: 480px) {
+    .Form-Item-Label {
+        max-width: inherit;
+        display: flex;
+        align-items: center;
+        font-size: 15px;
+    }
+}
+
+.Form-Item-Label.isMsg {
+    margin-top: 8px;
+    margin-bottom: auto;
+}
+
+@media screen and (max-width: 480px) {
+    .Form-Item-Label.isMsg {
+        margin-top: 0;
+    }
+}
+
+.Form-Item-Label-Required {
+    border-radius: 6px;
+    margin-right: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    width: 48px;
+    display: inline-block;
+    text-align: center;
+    background: #545454;
+    color: #fff;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 480px) {
+    .Form-Item-Label-Required {
+        border-radius: 4px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        width: 32px;
+        font-size: 10px;
+    }
+}
+
+.Form-Item-Input {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-left: 40px;
+    padding-left: 1em;
+    padding-right: 1em;
+    height: 48px;
+    flex: 1;
+    width: 100%;
+    max-width: 410px;
+    background: #eaedf2;
+    font-size: 18px;
+}
+
+@media screen and (max-width: 480px) {
+    .Form-Item-Input {
+        margin-left: 0;
+        margin-top: 18px;
+        height: 40px;
+        flex: inherit;
+        font-size: 15px;
+    }
+}
+
+.Form-Item-Textarea {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-left: 40px;
+    padding-left: 1em;
+    padding-right: 1em;
+    height: 216px;
+    flex: 1;
+    width: 100%;
+    max-width: 410px;
+    background: #eaedf2;
+    font-size: 18px;
+}
+
+@media screen and (max-width: 480px) {
+    .Form-Item-Textarea {
+        margin-top: 18px;
+        margin-left: 0;
+        height: 200px;
+        flex: inherit;
+        font-size: 15px;
+    }
+}
+
+.Form-Btn {
+    border-radius: 6px;
+    margin-top: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 280px;
+    display: block;
+    letter-spacing: 0.05em;
+    background: #545454;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 480px) {
+    .Form-Btn {
+        margin-top: 24px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        width: 160px;
+        font-size: 16px;
+    }
+} */
+
+body {
+
+    cursor: default;
+
+}
