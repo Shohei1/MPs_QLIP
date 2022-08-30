@@ -17,3 +17,4 @@ I used node.js, database and scss on this project.
 
 4: React app
 I used firebase and react to deploy my first react app.
+Since I could not upload the whole files, only components and views are on github.
