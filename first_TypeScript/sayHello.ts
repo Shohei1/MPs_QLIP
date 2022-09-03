@@ -254,3 +254,192 @@ class ChildPoint extends BasePoint3D {
 
 // 実際の開発で重要な型
 // Enum型、ジェネリック型、Union型とIntersection型、リテラル型、never型
+
+// Enum型・列挙型
+
+enum Direction {
+    Up,
+    Down,
+    Left,
+    Right,
+    //数字の指定がなかったら、インクリメントで自動で設定される
+}
+
+// enum direcionを参照
+let direction: Direction = Direction.Left;
+console.log(direction);
+
+enum Direction {
+    Up2 = "UP",
+    Down2 = "DOWN",
+    Left2 = "LEFT",
+    Right2 = "RIGHT",
+}
+
+const value = "DOWN";
+const enumValue = value as Direction;
+
+if (enumValue === Direction.Down2) {
+    console.log("Down is selected");
+}
+
+//ジェネリック型
+// 外側から指定される型が異なっても動作するような凡庸的なクラスや関数を実装する際に便利
+
+//Tはクラス内で利用する仮の型の名前です
+class Queue<T> {
+    // 内部にTの型の配列を初期化します
+    private array: T[] = [];
+
+    // Tの型の値を配列に追加します
+    push(item: T) {
+        this.array.push(item);
+    }
+
+    // Tの型の配列最初の値を取り出します
+    pop(): T | undefined {
+        return this.array.shift();
+    }
+}
+
+const queue = new Queue<number>(); //数値型を扱うキュー生成します
+queue.push(111);
+queue.push(112);
+// queue.push("hoge"); number型ではないのでエラー
+let str = "fuga";
+// str = queue.pop(); strはnumber型ではないのでエラー
+
+//Union型とIntersection型
+
+// Union型
+//どちらかに該当していればエラーにならない
+function printId(id: number | string) {
+    console.log(id);
+}
+
+printId(11);
+printId("Shohei");
+
+// 型エイリアスとしても定義できる
+type Id = number | string;
+
+function printId2(id: Id) {
+    console.log(id);
+}
+printId2("false");
+
+// 型エイリアス同士を掛け合わせて新たな型を定義できる
+type Identity = {
+    id: number | string;
+    name: string;
+};
+
+type Contact = {
+    name: string;
+    email: string;
+    phone: string;
+};
+
+//和集合による新たなUnion型の定義をする
+//IdentiryもしくはCOntactの型を受けることが可能
+type IdentityOrContact = Identity | Contact;
+
+const id: IdentityOrContact = {
+    id: "111",
+    name: "Shohei",
+};
+
+const contact: IdentityOrContact = {
+    name: "SHOHEI",
+    email: "test@example.com",
+    phone: "01234567",
+};
+
+console.log(id);
+console.log(contact);
+
+//Intersection型
+// Intersection型は複数の方をマージして一つとなった型。全ての型定義の内容を合わせた方を生成する
+
+// 積集合による新たなIntersection型の定義をする
+// IdentityとContactの両方の全てのプロパティがマージされた型として扱う
+type Employee = Identity & Contact;
+
+const employee: Employee = {
+    id: "111",
+    name: "Shohei",
+    email: "test@example.com",
+    phone: "0122345678",
+};
+
+console.log(employee);
+
+// 下記はContact情報のみで変数定義ができないのでエラー。idが必要
+// const employeeContact: Employee = {
+//     name: "Shohei",
+//     email: "test@example.com",
+//     phone: "0122345678",
+// };
+
+//リテラル型
+// | でデータを区切るリテラル型を用いると、決まった文字列や数字しか入らない型という制御が可能
+let postStatus: "draft" | "published" | "deleted";
+postStatus = "draft";
+// 下記は型宣言にないからエラーになる
+// postStatus = "drafts";
+
+// リテラル型は数字としても使える
+// 下記は関数の戻り値を型情報として定義する際に数値リテラル型を使用する例
+//-1,0,1のいずれかしか返さない型情報を定義
+function compare(a: string, b: string): -1 | 0 | 1 {
+    // 三項演算子でif, else if, elseを使ってる
+    return a === b ? 0 : a > b ? 1 : -1;
+}
+
+// never型
+// 決して発生しない値の種類を表す
+// 例えば、常に例外を発生させる関数などで決して値が返されることのない戻り値の方をneverとして定義する
+
+//エラーが常に返るような関数で決して値が正常に帰らない場合にnever型を指定する
+function error(message: string): never {
+    throw new Error(message);
+}
+
+function foo(x: string | number | number[]): boolean {
+    if (typeof x === "string") {
+        return true;
+    } else if (typeof x === "number") {
+        return false;
+    }
+
+    //neverを利用することで明示的に値が返らないことをコンパイラに伝えることができる
+    //neverを使用しないとTypeScriptはコンパイルエラーになる
+    return error("Never happens");
+}
+
+// neverの使い方２
+// if文やswitch文でTypescriptの型の条件分岐に漏れがないことを保証するようなケースもある
+
+//将来的にも定数が追加される可能性のあるenum型を定義する
+enum PageType {
+    ViewProfile,
+    EfitProfile,
+    ChangePassword,
+}
+
+const getTitleText = (type: PageType) => {
+    switch (type) {
+        case PageType.ViewProfile:
+            return "Setting";
+        case PageType.EfitProfile:
+            return "Edit Profile";
+        case PageType.ChangePassword:
+            return "Change Password";
+        default:
+            // 決して起きないことをコンパイラに伝えるnever型に代入を行う
+            // これにより、仮に将来PageTypeのenum型に定数が新規で追加された際に
+            // コンパイラ時にエラーが起きるためのバグを未然に防ぐ対応を行いことができる
+            const wrongType: never = type;
+            throw new Error(`$(wrongType) is not in PageType`);
+    }
+};

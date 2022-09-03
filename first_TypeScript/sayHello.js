@@ -163,3 +163,106 @@ var user2 = new User();
 user2.name = "Shohei";
 user2.age = 28;
 console.log(user2.sayHello3());
+// アクセス修飾子
+// typescriptのアクセス修飾子(Access Modifiers)はpublic, private, protected (phpと一緒かな？)
+var BasePoint3D = /** @class */ (function () {
+    function BasePoint3D() {
+    }
+    return BasePoint3D;
+}());
+// インスタンス化をおこなった場合のアクセス制御の例
+var basePoint = new BasePoint3D();
+basePoint.x; //ok
+// basePoint.y; //privateなのでエラー
+// basePoint.z; //protectedもエラー
+// クラスを継承した際のアクセス制御
+var ChildPoint = /** @class */ (function (_super) {
+    __extends(ChildPoint, _super);
+    function ChildPoint() {
+        var _this = _super.call(this) || this;
+        _this.x; //ok
+        // this.y; //privateなのでエラー
+        _this.z; //ok
+        return _this;
+    }
+    return ChildPoint;
+}(BasePoint3D));
+// 実際の開発で重要な型
+// Enum型、ジェネリック型、Union型とIntersection型、リテラル型、never型
+// Enum型・列挙型
+var Direction;
+(function (Direction) {
+    Direction[Direction["Up"] = 0] = "Up";
+    Direction[Direction["Down"] = 1] = "Down";
+    Direction[Direction["Left"] = 2] = "Left";
+    Direction[Direction["Right"] = 3] = "Right";
+    //数字の指定がなかったら、インクリメントで自動で設定される
+})(Direction || (Direction = {}));
+// enum direcionを参照
+var direction = Direction.Left;
+console.log(direction);
+(function (Direction) {
+    Direction["Up2"] = "UP";
+    Direction["Down2"] = "DOWN";
+    Direction["Left2"] = "LEFT";
+    Direction["Right2"] = "RIGHT";
+})(Direction || (Direction = {}));
+var value = "DOWN";
+var enumValue = value;
+if (enumValue === Direction.Down2) {
+    console.log("Down is selected");
+}
+//ジェネリック型
+// 外側から指定される型が異なっても動作するような凡庸的なクラスや関数を実装する際に便利
+//Tはクラス内で利用する仮の型の名前です
+var Queue = /** @class */ (function () {
+    function Queue() {
+        // 内部にTの型の配列を初期化します
+        this.array = [];
+    }
+    // Tの型の値を配列に追加します
+    Queue.prototype.push = function (item) {
+        this.array.push(item);
+    };
+    // Tの型の配列最初の値を取り出します
+    Queue.prototype.pop = function () {
+        return this.array.shift();
+    };
+    return Queue;
+}());
+var queue = new Queue(); //数値型を扱うキュー生成します
+queue.push(111);
+queue.push(112);
+// queue.push("hoge"); number型ではないのでエラー
+var str = "fuga";
+// str = queue.pop(); strはnumber型ではないのでエラー
+//Union型とIntersection型
+// Union型
+//どちらかに該当していればエラーにならない
+function printId(id) {
+    console.log(id);
+}
+printId(11);
+printId("Shohei");
+function printId2(id) {
+    console.log(id);
+}
+printId2("false");
+var id = {
+    id: "111",
+    name: "Shohei"
+};
+var contact = {
+    name: "SHOHEI",
+    email: "test@example.com",
+    phone: "01234567"
+};
+console.log(id);
+console.log(contact);
+var employee = {
+    id: "111",
+    name: "Shohei",
+    email: "test@example.com",
+    phone: "0122345678"
+};
+console.log(employee);
