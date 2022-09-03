@@ -1,3 +1,18 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 function sayHello(firstName) {
     console.log("Hello" + firstName);
 }
@@ -62,7 +77,89 @@ function genBirdsInfo(name) {
 function singBirds(birdInfo) {
     var bird = ["hato,kiji"];
     console.log(bird);
-    return birdInfo("hato,kiji")[1] + " piyo piyo";
+    return birdInfo("hato,kiji")[0] + " piyo piyo";
 }
 console.log(singBirds(genBirdsInfo));
-// console.log(singBirds("dobato"));
+function printPoint(point) {
+    console.log("x\u5EA7\u6A19\u306F".concat(point.x, "\u3067\u3059"));
+    console.log("y\u5EA7\u6A19\u306F".concat(point.y, "\u3067\u3059"));
+}
+printPoint({ x: 100, y: 100 });
+function printPoint2(point) {
+    console.log("x\u5EA7\u6A19\u306F".concat(point.x, "\u3067\u3059"));
+    console.log("y\u5EA7\u6A19\u306F".concat(point.y, "\u3067\u3059"));
+    console.log("z\u5EA7\u6A19\u306F".concat(point.z, "\u3067\u3059"));
+}
+printPoint2({ x: 100, y: 100, z: 200 });
+//implementsを使用してクラスに実装を与えること（委譲）が可能
+// オプショナルにすることでエラーにはならない
+var MyPoint = /** @class */ (function () {
+    function MyPoint() {
+    }
+    return MyPoint;
+}());
+var cc = {
+    color: "赤",
+    radius: 10
+};
+// 型エイリアスはオブジェクトの型そのものを表すもの
+// オブジェクトそのものではなく、クラスやオブジェクトの一部のプロパティや関数を含む一部の振る舞いを定義するものであれば、インターフェースを使う
+// クラス
+var Point4 = /** @class */ (function () {
+    // 引数がない場合の初期値を指定する
+    function Point4(x, y) {
+        if (x === void 0) { x = 0; }
+        if (y === void 0) { y = 0; }
+        this.x = x;
+        this.y = y;
+    }
+    // 戻り値がない関数を定義するためにvoicを指定する
+    Point4.prototype.moveX = function (n) {
+        this.x += n;
+    };
+    Point4.prototype.moveY = function (n) {
+        this.y += n;
+    };
+    return Point4;
+}());
+var point5 = new Point4();
+point5.moveX(10);
+console.log("".concat(point5.x, ", ").concat(point5.y)); //10, 0
+// extendsを使って継承
+var Point3D = /** @class */ (function (_super) {
+    __extends(Point3D, _super);
+    function Point3D(x, y, z) {
+        if (x === void 0) { x = 0; }
+        if (y === void 0) { y = 0; }
+        if (z === void 0) { z = 0; }
+        var _this = 
+        // 継承先のコンストラクトを呼び出す
+        _super.call(this, x, y) || this;
+        _this.z = z;
+        return _this;
+    }
+    Point3D.prototype.moveZ = function (n) {
+        this.z += n;
+    };
+    return Point3D;
+}(Point4));
+var point3D = new Point3D();
+// 継承先のメソッドを呼び出すことができる
+point3D.moveX(10);
+point3D.moveZ(20);
+console.log("".concat(point3D.x, ", ").concat(point3D.y, ", ").concat(point3D.z)); //10, 0, 20
+var User = /** @class */ (function () {
+    function User() {
+        this.name = "";
+        this.age = 0;
+    }
+    // インターフェースに定義されているメソッドを実装しない場合は、コンパイルエラーになる
+    User.prototype.sayHello3 = function () {
+        return "\u3053\u3093\u306B\u3061\u306F\u3001\u79C1\u306F".concat(this.name, "\u3001").concat(this.age, "\u6B73\u3067\u3059\u3002");
+    };
+    return User;
+}());
+var user2 = new User();
+user2.name = "Shohei";
+user2.age = 28;
+console.log(user2.sayHello3());
