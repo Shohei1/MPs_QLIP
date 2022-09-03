@@ -23,7 +23,10 @@ I used node.js, database and scss on this project.
 I used firebase and react to deploy my first react app.
 Since I could not upload the whole files, only components and views are on github.
 
-5: Awa_short.　（A group project）
+5: Awa_short.（A group project）
 
 Files that I was involved were added to this file.
 My role was mainly backend and I was invloved with controllers, models, migration and seeding files, blade files, and a routing file.
+
+6: first_TypeScript.
+My record of studying typescript since 2022/09/03 is in this holder.
