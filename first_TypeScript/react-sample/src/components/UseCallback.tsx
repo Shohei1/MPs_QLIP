@@ -1,58 +1,46 @@
-/** useCall/useMemoはメモ化のフック
-値や関数を保持し、必要のない子要素のレンダリングや計算を抑制するために使う
+import React, { useState, useCallback } from 'react'
 
-reactの再描画のタイミング
-・propsや内部状態が更新された時
-・コンポーネント内で参照しているContextの値が更新された時
-・親コンポーネントが再描画された時
-
-メモコンポーネントは親コンポーネントで再描画が発生しても、propsやcontextの値が変化したい場合は親コンポーネントによる西行画が発生しません
-*/
-
-import React, { memo, useState } from 'react'
-
-type FizzProps = {
-    isFizz: boolean
+type ButtonProps = {
+    onClick: () => void
 }
 
-// 通常コンポーネントなので、再描画される
-const Fizz = (props: FizzProps) => {
-    const { isFizz } = props
-    console.log(`Fizzが再描画されました, isFizz=${isFizz}`)
-    return <span>{isFizz ? 'Fizz' : ''}</span>
+const DecrementButton = (props: ButtonProps) => {
+    const { onClick } = props
+    console.log('DecrementButtonが再描画されました')
+    return <button onClick={onClick}>Decrement</button>
 }
 
+const IncrementButton = React.memo((props: ButtonProps) => {
+    const { onClick } = props
+    console.log('IncrementButtonが再描画されました')
+    return <button onClick={onClick}>Increment</button>
+})
 
-type BuzzProps = {
-    isBuzz: boolean
-}
+const DoubleButton = React.memo((props: ButtonProps) => {
+    const { onClick } = props
+    console.log('DoubleButtonが再描画されました')
+    return <button onClick={onClick}>Double</button>
+})
 
-// メモかした関数コンポーネントなので再描画されない
-const Buzz = (props: BuzzProps) => {
-    const { isBuzz } = props
-    console.log(`Buzzが再描画されました, isBuzz=${isBuzz}`)
-    return (
-        <span>
-            {isBuzz ? 'Buzz' : ''}
-        </span>
-    )
-}
+export const Parent2 = () => {
+    const [count, setCount] = useState(0)
+    const decrement = () => {
+        setCount((c) => c - 1)
+    }
+    const increment = () => {
+        setCount((c) => c + 1)
+    }
 
+    const double = useCallback(() => {
+        setCount((c) => c * 2)
+    }, [])
 
-export const Parent = () => {
-    const [count, setCount] = useState(1)
-    const isFizz = count % 3 === 0
-    const isBuzz = count % 5 === 0
-
-    console.log(`Parentが再描画されました, count=${count}`)
     return (
         <div>
-            <button onClick={() => setCount((c) => c + 1)}>+1</button>
-            <p>{`現在のカウント: ${count}`}</p>
-            <p>
-                <Fizz isFizz={isFizz} />
-                <Buzz isBuzz={isBuzz} />
-            </p>
+            <p>Count: {count}</p>
+            <DecrementButton onClick={decrement} />
+            <IncrementButton onClick={increment} />
+            <DoubleButton onClick={double} />
         </div>
     )
 }
