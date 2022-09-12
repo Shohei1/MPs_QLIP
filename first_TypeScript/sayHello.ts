@@ -627,3 +627,15 @@ if (typeof y === 'string') {
 // p64の型定義ファイルは要復習・実装
 
 //typescriptの基礎修了
+
+
+
+let lines1: number[] = [1, 201]
+let a:number = Number(lines1[0]);
+let b:number = Number(lines1[1]);
+
+if (a > b) {
+console.log(a)
+} else {
+    console.log(b)
+}

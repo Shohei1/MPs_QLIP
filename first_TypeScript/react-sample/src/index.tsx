@@ -5,6 +5,12 @@ import './index.css'
 // import App from './App';
 import reportWebVitals from './reportWebVitals'
 import Hello from './components/Hello'
+import Name from './components/Name'
+import Message from './components/Message'
+import ContainerSample from './components/ContainerSample'
+import ContextSample from './components/ContextSample'
+import Counter from './components/UseState'
+import Counter2 from './components/UseReducer'
 
 // const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 // root.render(
@@ -14,10 +20,16 @@ import Hello from './components/Hello'
 // )
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Hello />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <Hello />
+        <Name />
+        <Message />
+        <ContainerSample />
+        <ContextSample />
+        <Counter initialValue={0} />
+        <Counter2 initialValue={0} />
+    </React.StrictMode>,
+    document.getElementById('root')
 )
 
 // If you want to start measuring performance in your app, pass a function
