@@ -11,6 +11,7 @@ import ContainerSample from './components/ContainerSample'
 import ContextSample from './components/ContextSample'
 import Counter from './components/UseState'
 import Counter2 from './components/UseReducer'
+import { Parent } from './components/UseCallback'
 
 // const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 // root.render(
@@ -28,6 +29,7 @@ ReactDOM.render(
         <ContextSample />
         <Counter initialValue={0} />
         <Counter2 initialValue={0} />
+        <Parent />
     </React.StrictMode>,
     document.getElementById('root')
 )
