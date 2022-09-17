@@ -14,14 +14,14 @@ import reportWebVitals from './reportWebVitals'
 // import Counter2 from './components/UseReducer'
 // import { Parent } from './components/Parent'
 // import { Parent2 } from './components/UseCallback'
-// import { UseMemo } from './components/UseMemo'
+import { UseMemo } from './components/UseMemo'
 import { Clock } from './components/Clock'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
     <React.StrictMode>
         {/* <Parents /> */}
-        {/* <UseMemo /> */}
+        <UseMemo />
         <Clock />
     </React.StrictMode>
 )

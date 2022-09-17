@@ -29,4 +29,9 @@ Files that I was involved were added to this file.
 My role was mainly backend and I was invloved with controllers, models, migration and seeding files, blade files, and a routing file.
 
 6: first_TypeScript.
+
 The record of studying typescript since 2022/09/03 is in this holder.
+
+7: first_Nextjs_TypeSript
+
+This folder contains my first Next.js projects. 
