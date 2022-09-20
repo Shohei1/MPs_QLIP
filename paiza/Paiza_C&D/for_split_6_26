@@ -1,0 +1,16 @@
+let lines = require("fs").readFileSync("/dev/stdin", "utf8").split("\n");
+
+// let name1 = lines[0];
+
+// let sex = (lines[1] === "M") ? "M" : "F";
+
+// console.log(`Hi ${sex} ${name1}`);
+
+let input = lines[0].split(" ");
+// ここで入力で受け取ったものを今まで分割して配列に入れてる
+
+let sex = input[1] === "M" ? "Mr." : "Ms.";
+// 三項演算子でif文的なものを作ってる
+
+console.log(`Hi, ${sex} ${input[0]}`);
+// テキストリテラルでテキストと変数を一緒に表示してる

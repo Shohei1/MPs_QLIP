@@ -1,0 +1,8 @@
+let lines = require("fs").readFileSync("/dev/stdin", "utf8").split("\n");
+
+let name1 = [lines[0], lines[1], lines[2]];
+let medal = ["Gold", "Silver", "Bronze"];
+
+for (let i = 0; i < 3; i++) {
+    console.log(medal[i], name1[i]);
+}

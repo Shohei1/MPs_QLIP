@@ -46,4 +46,3 @@ jest.setup.js
 jest.config.js
 package-lock.json
 .env
-.gitignore
