@@ -35,3 +35,7 @@ The record of studying typescript since 2022/09/03 is in this holder.
 7: first_Nextjs_TypeSript
 
 This folder contains my first Next.js projects. 
+
+8: Paiza
+
+This folder contains files to solve paiza tests and practice quizes. 
