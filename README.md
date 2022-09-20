@@ -25,7 +25,7 @@ Since I could not upload the whole files, only components and views are on githu
 
 5: Awa_short.（A group project）
 
-Files that I was involved were added to this file.
+Files that I was involved wiht were added to this folder.
 My role was mainly backend and I was invloved with controllers, models, migration and seeding files, blade files, and a routing file.
 
 6: first_TypeScript.
