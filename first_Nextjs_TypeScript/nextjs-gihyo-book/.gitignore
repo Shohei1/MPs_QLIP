@@ -44,3 +44,4 @@ yarn.lock
 README.md
 jest.setup.js
 jest.config.js
+package-lock.json
